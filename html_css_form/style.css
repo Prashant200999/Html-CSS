@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+h2{
+    font-family: "Satisfy", cursive;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+     background-image: url(https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg);
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+.cont{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background-color: black;
+    border-radius: 10px;
+    border: 2px;
+    overflow: hidden;
+}
+.cont::before{
+content: ' ';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 380px;
+height: 420px;
+background: linear-gradient(0deg,transparent,transparent,blue,green,yellow,orange,red);
+z-index: 1;
+transform-origin: bottom right;
+animation: anime 6s linear infinite;
+}
+.cont::after{
+    content: ' ';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,transparent,red,orange ,yellow ,green,blue);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: anime 6s linear infinite;
+    animation-delay: -3s;
+    }
+@keyframes anime{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.cont form{
+    position: absolute;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+    z-index: 2;
+    inset: 4px;
+}
+.inputbox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.cont form .inputbox input{
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    padding: 20px 10px 10px;
+    outline: none;
+    box-shadow: none;
+    color: black;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.cont form .inputbox span{
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: white;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.cont form .inputbox input:valid ~ span,
+.cont form .inputbox input:focus ~ span{
+    color: grey;
+    font-size:0.75em;
+    transform: translateY(-35px);
+}
+.cont form .inputbox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.cont form .inputbox input:valid ~ i,
+.cont form .inputbox input:focus ~ i{
+    height: 40px;
+
+}
+.cont form .links{
+    display: flex;
+    justify-content: space-between;
+}
+.cont form .links a{
+    margin-top: 10px;
+    font-size: 0.75em;
+    color: grey;
+    text-decoration: none;
+
+}
+.cont form .links a:hover,
+.cont form .links a:nth-child(2){
+    color: white;
+    font-size: 1.1em;
+    transition: 0.5s;
+}
+.cont form .links a:nth-child(2):hover{
+    font-size: 1.3em;
+    transition: 0.5s;
+
+}
+.btn{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background-color: grey;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+}
+.btn:hover {
+    color: black;
+    padding: 11px 27px;
+    font-size: 1.1em;
+    margin-top: 12px;
+    transition: 0.5s;
+    background-color: white;
+}
+.btn:active{
+opacity: 0.8;
+}
